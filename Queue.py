@@ -8,50 +8,77 @@ class Stack: ## Stack Class
   
   _listNode = [] ## initial list for the Stack::stack
   
-  def new():
+  def new(self):
     self._listNode = []
     
-  def add(a, b):
+  def add(self, a):
   	 self._listNode.append(a)
-    
-  def remove(a):
+
+  def add(a, b):
+    return False
+
+  def remove(self, a):
     self._listNode.remove(a)
     
-  def shift(a): ## shift index by 'a' <+ve OR -ve>
+  def shift(self, a): ## shift index by 'a' <+ve OR -ve>
     indexCarry = [] ## create the carry queue
     indexCarry[0] = a ## create the 
     for i in range(len(self._listNode)):
       if a > 0:
       	carryIndex[i+1] = self.listNode[i] ## shift forward
-      else if a < 0:
+      elif a < 0:
         	carryIndex[i-1] = self.listNode[i] ## shift back
       
     self._listNode = indexCarry 
+
+  def shift(self, a, b):
+    listCarry = []
+    for i in range(b): ## add all values from keys<i> into listCarry
+      listCarry.append(self._listNode[i]) ## set index i of listCarry to index 
+
+    for j in range(b+1, len(self._listNode)+1):
+      indexCarry[j] = self._listNode[j-1] ## set the ceil values of the array
+
+    listCarry[b] = a
+    self._listNode = listCarry() ## replace old array with new values
+
 
 class Queue:
   
   _x = 0
   _y = 0
-  _SIZE = [self._x, self._y] ## queue[STACK] size'
+  _SIZE = [_x, _y] ## queue[STACK] size'
   
-  stack = Stack.new() ## initalize new stack
+  stack = Stack()
+  stack.new() ## initalize new stack
   
-  def Queue(r):
-    switch(r):
-      case "r":
-        self.stack.sType = Stack.RELATIONAL; ## declare stack type [mono, relational, conditional]
-      default:
-        return False
+  def Queue(self, r):
+    return {
+      'r': { self.stack.sType == Stack.RELATIONAL } ## declare stack type [mono, relational, conditional]
+    }.get(r, 0)
       
-  def queue(a):
+  def queue(self, a):
     self.stack.add(a)
     
   def getTop(): 
     return self.stack[0] ## return the stack index <0>
   
-  def putTop(a, b):
+  def putTop(a): ## work in progress
   	 self.stack.shift(1).add(a, 0)
-    	
+
+if True:
+  q = Queue()
+  q.Queue("r") ## create relational queue
+
+  for i in range(1, 10):
+    q.queue(i) ## create queue with values [1, 2, 3, ... , 10]
+
+  print q.stack._listNode
+  print len(q.stack._listNode)
+
+  q.stack.shift(13, 3) ## add '13' at position 3 in array
+
+  print q.stack._listNode
       
   
       
