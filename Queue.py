@@ -65,8 +65,9 @@ class Queue:
   
   def putTop(a): ## work in progress
   	 self.stack.shift(1).add(a, 0)
-
-if True:
+  	 
+  	 
+def Main():
   q = Queue()
   q.Queue("r") ## create relational queue
 
@@ -79,10 +80,6 @@ if True:
   q.stack.shift(13, 3) ## add '13' at position 3 in array
 
   print q.stack._listNode
-      
   
-      
-  
-      	
-       
-    
+if __name__ == "__main__":
+  Main()
